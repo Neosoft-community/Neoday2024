@@ -59,7 +59,7 @@ WA.onInit().then(() => {
       // Vérifier l'heure toutes les secondes
     setInterval(verifierHeure, 1000);
 
-    WA.room.area.onEnter('indice1').subscribe(() => {
+    /*WA.room.area.onEnter('indice1').subscribe(() => {
         // const today = new Date();
         // const time = today.getHours() + ":" + today.getMinutes();
         currentPopup = WA.ui.openPopup("indice1Popup", "Bonjour ! Voici mon indice : Je suis le Practice leader de la Practice DEVOPS, la lettre que tu recherches est la première de mon prénom !", [{
@@ -69,9 +69,9 @@ WA.onInit().then(() => {
                 popup.close();
             }
         }]);
-    })
+    })*/
 
-    WA.room.area.onLeave('indice1').subscribe(closePopup)
+   /* WA.room.area.onLeave('indice1').subscribe(closePopup)
 
     WA.room.area.onEnter('indice2').subscribe(() => {
         currentPopup = WA.ui.openPopup("indice2Popup", "Voici un nouvel indice : J'ai ouvert le forum des communauté et je suis le PDG, la lettre que tu recherches est la première de mon prenom !", [{
@@ -81,9 +81,9 @@ WA.onInit().then(() => {
                 popup.close();
             }
         }]);
-    })
+    })*/
 
-    WA.room.area.onLeave('indice2').subscribe(closePopup)
+  /*  WA.room.area.onLeave('indice2').subscribe(closePopup)
 
     WA.room.area.onEnter('indice3').subscribe(() => {
         currentPopup = WA.ui.openPopup("indice3Popup", "Un nouvel indice, ici tu trouveras : Je suis le Practice leader de la Practice INFRA / CLOUD, la lettre que tu recherches est la quatrième de mon prénom !", [{
@@ -93,11 +93,11 @@ WA.onInit().then(() => {
                 popup.close();
             }
         }]);
-    })
+    })*/
 
-    WA.room.area.onLeave('indice3').subscribe(closePopup)
+  /*  WA.room.area.onLeave('indice3').subscribe(closePopup)*/
 
-    WA.room.area.onEnter('indice4').subscribe(() => {
+  /*  WA.room.area.onEnter('indice4').subscribe(() => {
         currentPopup = WA.ui.openPopup("indice4Popup", "Bonjour, voici mon indice : Je suis un des Practice leader de la Practice CYBER mais pas Sylvain, la lettre que tu recherches est la septième de mon prénom !", [{
             label: "OK, merci !",
             className: "primary",
@@ -105,11 +105,11 @@ WA.onInit().then(() => {
                 popup.close();
             }
         }]);
-    })
+    })*/
 
-    WA.room.area.onLeave('indice4').subscribe(closePopup)
+   /* WA.room.area.onLeave('indice4').subscribe(closePopup)*/
 
-    WA.room.area.onEnter('indice5').subscribe(() => {
+  /*  WA.room.area.onEnter('indice5').subscribe(() => {
         currentPopup = WA.ui.openPopup("indice5Popup", "Salut ! Allez, voici un petit indice : Je suis le Practice leader de la Practice AGILITE, la lettre que tu recherches est la quatrième de mon prénom !", [{
             label: "Merci !",
             className: "primary",
@@ -119,9 +119,9 @@ WA.onInit().then(() => {
         }]);
     })
 
-    WA.room.area.onLeave('indice5').subscribe(closePopup)
+    WA.room.area.onLeave('indice5').subscribe(closePopup)*/
 
-    WA.room.area.onEnter('indice6').subscribe(() => {
+   /* WA.room.area.onEnter('indice6').subscribe(() => {
         currentPopup = WA.ui.openPopup("indice6Popup", "Bonjour ! Voici mon indice : Je suis le Social Media Manager de Néosoft, la lettre de que tu recherches est la dernière de mon prénom !", [{
             label: "OK, merci !",
             className: "primary",
@@ -131,9 +131,9 @@ WA.onInit().then(() => {
         }]);
     })
 
-    WA.room.area.onLeave('indice6').subscribe(closePopup)
+    WA.room.area.onLeave('indice6').subscribe(closePopup)*/
 
-    WA.room.area.onEnter('indice7').subscribe(() => {
+   /* WA.room.area.onEnter('indice7').subscribe(() => {
         currentPopup = WA.ui.openPopup("indice7Popup", "Hello ! Indice : Je suis la Responsable formation Néosoft Training, la lettre que tu recherches est la première de mon prénom !", [{
             label: "OK, merci !",
             className: "primary",
@@ -143,9 +143,9 @@ WA.onInit().then(() => {
         }]);
     })
 
-    WA.room.area.onLeave('indice7').subscribe(closePopup)
+    WA.room.area.onLeave('indice7').subscribe(closePopup)*/
 
-    WA.room.area.onEnter('indice8').subscribe(() => {
+   /* WA.room.area.onEnter('indice8').subscribe(() => {
         currentPopup = WA.ui.openPopup("indice8Popup", "Indice : Je suis le Practice leader de la Practice Software Engineering, la lettre que tu recherches est la deuxième de mon prénom !", [{
             label: "OK, merci !",
             className: "primary",
@@ -155,9 +155,9 @@ WA.onInit().then(() => {
         }]);
     })
 
-    WA.room.area.onLeave('indice8').subscribe(closePopup)
+    WA.room.area.onLeave('indice8').subscribe(closePopup)*/
 
-    WA.room.area.onEnter('indice9').subscribe(() => {
+   /* WA.room.area.onEnter('indice9').subscribe(() => {
         currentPopup = WA.ui.openPopup("indice9Popup", "Mon tout est l'anagramme d'une plante connue pour ses jolies fleurs bleues !", [{
             label: "Rendez-vous dans l'enquete de satisfaction pour répondre !",
             className: "primary",
@@ -167,7 +167,7 @@ WA.onInit().then(() => {
         }]);
     })
 
-    WA.room.area.onLeave('indice9').subscribe(closePopup)
+    WA.room.area.onLeave('indice9').subscribe(closePopup=*/
     
 
     WA.room.area.onEnter('rs').subscribe(() => {

@@ -3460,7 +3460,7 @@
                         {
                          "name":"openWebsiteTriggerMessage",
                          "type":"string",
-                         "value":"Connecte-toi sur Luccarh ! "
+                         "value":"Connecte-toi sur Lucca ! Appuie sur espace"
                         }, 
                         {
                          "name":"silent",

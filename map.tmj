@@ -1109,7 +1109,7 @@
                         {
                          "name":"openWebsite",
                          "type":"string",
-                         "value":"https:\/\/landing.neosoft.fr\/tutopacman"
+                         "value":"https:\/\/landing.neosoft.fr\/tutoneoday"
                         }, 
                         {
                          "name":"openWebsiteTrigger",

@@ -4475,12 +4475,22 @@
                         {
                          "name":"chatName",
                          "type":"string",
-                         "value":"Chat - Salon 01"
+                         "value":"Chat - Salon A"
+                        }, 
+                        {
+                         "name":"jistiConfig",
+                         "type":"string",
+                         "value":"{\n  \"startWithAudioMuted\": true,\n  \"startWithVideoMuted\": true\n}"
                         }, 
                         {
                          "name":"jistiNoPrefix",
                          "type":"string",
                          "value":"true"
+                        }, 
+                        {
+                         "name":"jitsiRoom",
+                         "type":"string",
+                         "value":"Chat - A"
                         }, 
                         {
                          "name":"jitsiTrigger",
@@ -4495,7 +4505,7 @@
                         {
                          "name":"meetingRoomLabel",
                          "type":"string",
-                         "value":"Chat - Salon 1"
+                         "value":"Chat - Salon A"
                         }],
                  "rotation":0,
                  "type":"area",

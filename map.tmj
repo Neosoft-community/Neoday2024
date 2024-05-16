@@ -4475,7 +4475,7 @@
                         {
                          "name":"chatName",
                          "type":"string",
-                         "value":"Chat - Salon A"
+                         "value":"ChatA"
                         }, 
                         {
                          "name":"jistiConfig",
@@ -4490,12 +4490,7 @@
                         {
                          "name":"jitsiRoom",
                          "type":"string",
-                         "value":"Chat - A"
-                        }, 
-                        {
-                         "name":"jitsiTrigger",
-                         "type":"string",
-                         "value":"onaction"
+                         "value":"ChatA"
                         }, 
                         {
                          "name":"jitsiUrl",
@@ -4505,7 +4500,7 @@
                         {
                          "name":"meetingRoomLabel",
                          "type":"string",
-                         "value":"Chat - Salon A"
+                         "value":"ChatA"
                         }],
                  "rotation":0,
                  "type":"area",

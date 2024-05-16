@@ -1469,6 +1469,7 @@
                  "x":0,
                  "y":0
                 }],
+         "locked":true,
          "name":"mettingRoom",
          "opacity":1,
          "type":"group",
@@ -4472,9 +4473,29 @@
                  "name":"",
                  "properties":[
                         {
-                         "name":"silent",
-                         "type":"bool",
-                         "value":false
+                         "name":"chatName",
+                         "type":"string",
+                         "value":"Chat - Salon 01"
+                        }, 
+                        {
+                         "name":"jistiNoPrefix",
+                         "type":"string",
+                         "value":"true"
+                        }, 
+                        {
+                         "name":"jitsiTrigger",
+                         "type":"string",
+                         "value":"onaction"
+                        }, 
+                        {
+                         "name":"jitsiUrl",
+                         "type":"string",
+                         "value":"meet01.workadventure.labneosoft.fr"
+                        }, 
+                        {
+                         "name":"meetingRoomLabel",
+                         "type":"string",
+                         "value":"Chat - Salon 1"
                         }],
                  "rotation":0,
                  "type":"area",

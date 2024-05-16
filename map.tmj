@@ -3773,6 +3773,11 @@
                          "value":"Salle01"
                         }, 
                         {
+                         "name":"jitsiUrl",
+                         "type":"string",
+                         "value":"meet01.workadventure.labneosoft.fr"
+                        }, 
+                        {
                          "name":"meetingRoomLabel",
                          "type":"string",
                          "value":"Salle01"
@@ -3818,6 +3823,11 @@
                          "name":"jitsiRoom",
                          "type":"string",
                          "value":"Salle02"
+                        }, 
+                        {
+                         "name":"jitsiUrl",
+                         "type":"string",
+                         "value":"meet01.workadventure.labneosoft.fr"
                         }, 
                         {
                          "name":"meetingRoomLabel",
@@ -3867,6 +3877,11 @@
                          "value":"Salle04"
                         }, 
                         {
+                         "name":"jitsiUrl",
+                         "type":"string",
+                         "value":"meet01.workadventure.labneosoft.fr"
+                        }, 
+                        {
                          "name":"meetingRoomLabel",
                          "type":"string",
                          "value":"Salle04"
@@ -3912,6 +3927,11 @@
                          "name":"jitsiRoom",
                          "type":"string",
                          "value":"Salle03"
+                        }, 
+                        {
+                         "name":"jitsiUrl",
+                         "type":"string",
+                         "value":"meet01.workadventure.labneosoft.fr"
                         }, 
                         {
                          "name":"meetingRoomLabel",
@@ -3969,6 +3989,11 @@
                          "name":"jitsiRoom",
                          "type":"string",
                          "value":"Salle05"
+                        }, 
+                        {
+                         "name":"jitsiUrl",
+                         "type":"string",
+                         "value":"meet01.workadventure.labneosoft.fr"
                         }, 
                         {
                          "name":"meetingRoomLabel",
@@ -4070,6 +4095,11 @@
                          "value":"Salle06"
                         }, 
                         {
+                         "name":"jitsiUrl",
+                         "type":"string",
+                         "value":"meet01.workadventure.labneosoft.fr"
+                        }, 
+                        {
                          "name":"meetingRoomLabel",
                          "type":"string",
                          "value":"Salle06"
@@ -4120,6 +4150,11 @@
                          "name":"jitsiRoom",
                          "type":"string",
                          "value":"Salle07"
+                        }, 
+                        {
+                         "name":"jitsiUrl",
+                         "type":"string",
+                         "value":"meet01.workadventure.labneosoft.fr"
                         }, 
                         {
                          "name":"meetingRoomLabel",
@@ -4511,70 +4546,6 @@
                  "width":863,
                  "x":511.833333333333,
                  "y":1468.16666666667
-                }, 
-                {
-                 "height":177,
-                 "id":238,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"openWebsite",
-                         "type":"string",
-                         "value":"https:\/\/discord.com\/channels\/1077878806645329991\/1120343835638251630"
-                        }, 
-                        {
-                         "name":"openWebsiteClosable",
-                         "type":"bool",
-                         "value":true
-                        }, 
-                        {
-                         "name":"openWebsiteTriggerMessage",
-                         "type":"string",
-                         "value":"Le message de la DMC"
-                        }, 
-                        {
-                         "name":"silent",
-                         "type":"bool",
-                         "value":true
-                        }],
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":304.333333333333,
-                 "x":2983.83333333333,
-                 "y":678.833333333333
-                }, 
-                {
-                 "height":181,
-                 "id":239,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"openWebsite",
-                         "type":"string",
-                         "value":"https:\/\/landing.neosoft.fr\/numerique-responsable"
-                        }, 
-                        {
-                         "name":"openWebsiteClosable",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"openWebsiteTriggerMessage",
-                         "type":"string",
-                         "value":"La Fresque du Num\u00e9rique !"
-                        }, 
-                        {
-                         "name":"silent",
-                         "type":"bool",
-                         "value":true
-                        }],
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":304.333333333333,
-                 "x":3558.5,
-                 "y":582.833333333333
                 }, 
                 {
                  "height":92.333333333333,

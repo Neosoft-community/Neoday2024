@@ -10,8 +10,6 @@ let currentPopup: any = undefined;
 WA.onInit().then(() => {
     console.log('Scripting API ready');
     console.log('Player tags: ',WA.player.tags)
-
-
     function verifierHeure() {
         // Obtenir l'heure actuelle
         var maintenant = new Date();

@@ -1,15 +1,19 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
+import { UIWebsite } from "@workadventure/iframe-api-typings";
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
 
 let currentPopup: any = undefined;
 
+let count:number =0;
 // Waiting for the API to be ready
 WA.onInit().then(() => {
+    
     console.log('Scripting API ready');
     console.log('Player tags: ',WA.player.tags)
+    affichager();
     function verifierHeure() {
         // Obtenir l'heure actuelle
         var maintenant = new Date();
@@ -30,24 +34,25 @@ WA.onInit().then(() => {
           // Déclencher ton action ici
           //console.log("Action déclenchée à l'heure précise !");
           //WA.chat.sendChatMessage("Action déclenchée à l'heure précise !", " Mr Robot");
-          WA.ui.banner.openBanner({
-            id: "banner-test",
-            text: "On va bientôt commencer, rendez-vous dans l'amphi ! :)",
-            bgColor: "#0055FF",
-            textColor: "#FFFFFF",
-            closable: false
-        });
+            WA.ui.banner.openBanner({
+                id: "banner-test",
+                text: "On va bientôt commencer, rendez-vous dans l'amphi ! :)",
+                bgColor: "#0055FF",
+                textColor: "#FFFFFF",
+                closable: false
+            });
         } else if (maintenant.getTime() === heureAction2.getTime()) {
             // Déclencher ton action ici
             //console.log("Action déclenchée à l'heure précise !");
             //WA.chat.sendChatMessage("Action déclenchée à l'heure précise !", " Mr Robot");
-            WA.ui.banner.openBanner({
-              id: "banner-test",
-              text: "C'est bientôt la fin... Rendez-vous dans l'amphi pour la conclusion !",
-              bgColor: "#0055FF",
-              textColor: "#FFFFFF",
-              closable: false
-          });
+            globalMessage("C'est bientôt la fin... Rendez-vous dans l'amphi pour la conclusion !");
+        //     WA.ui.banner.openBanner({
+        //       id: "banner-test",
+        //       text: "C'est bientôt la fin... Rendez-vous dans l'amphi pour la conclusion !",
+        //       bgColor: "#0055FF",
+        //       textColor: "#FFFFFF",
+        //       closable: false
+        //   });
           } //else {
             // Aucune des heures n'est encore passée
             //console.log("Aucune des heures n'est encore passée.");
@@ -219,5 +224,55 @@ function closePopup(){
         currentPopup = undefined;
     }
 }
+WA.room.area.onEnter('A').subscribe(() =>{
+    const playerName = WA.player.name;
+    console.log("test de type testage")
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + "A"; 
+    }
+})
+WA.room.area.onEnter('admin').subscribe(() =>{
+    
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.aAfficher = true;
+        //globalMessage( WA.state.messGlob ); 
+    } 
+    
+})
+WA.room.area.onLeave('admin').subscribe(() =>{
+    //closeAllPrompts();
+})
+function globalMessage(message:any){
+    WA.ui.banner.openBanner({
+        id: "banner",
+        text: message,
+        bgColor: "#FAB1E0",
+        textColor: "#FFFFFF",
+        closable: true
+    });
+}
+
+
+function affichager():void{ 
+    console.log("passage: ", WA.state.aAfficher);
+    if(WA.state.aAfficher){
+
+        globalMessage(WA.state.messGlob);
+        if(WA.player.name == "Fabien" && count != 1){
+            count = count + 1;
+        }else if(WA.player.name == "Fabien" && count == 1){
+            count              = 0;
+            WA.state.messGlob  = "";
+            WA.state.aAfficher = false;
+        }
+    }
+    setTimeout(affichager,2000);
+}
+// WA.room.area.onLeave('zoneDepart').subscribe(() =>{
+//     WA.player.state.saveVariable("hasAffichager",false);
+   
+//     //closeAllPrompts();
+// })
 
 export {};

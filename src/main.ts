@@ -1,6 +1,5 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
-import { UIWebsite } from "@workadventure/iframe-api-typings";
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
@@ -205,7 +204,6 @@ WA.onInit().then(() => {
                 popup.close();
             }
         }]);
-
     })
 
     WA.room.area.onLeave('fdn').subscribe(closePopup)
@@ -216,21 +214,103 @@ WA.onInit().then(() => {
     }).catch(e => console.error(e));
 
 }).catch(e => console.error(e));
-
-
 function closePopup(){
     if (currentPopup !== undefined) {
         currentPopup.close();
         currentPopup = undefined;
     }
 }
-WA.room.area.onEnter('A').subscribe(() =>{
+WA.room.area.onEnter('mgSalle1').subscribe(() =>{
     const playerName = WA.player.name;
-    console.log("test de type testage")
     if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + "A"; 
+        WA.state.messGlob = WA.state.messGlob + " Attention: salle 1 ";
     }
 })
+WA.room.area.onEnter('mgSalle2').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + " Attention: salle 2 ";
+    }
+})
+WA.room.area.onEnter('mgSalle3').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + " Attention: salle 3 ";
+    }
+})
+WA.room.area.onEnter('mgSalle4').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + " Attention: salle 4 ";
+    }
+})
+WA.room.area.onEnter('mgSalle5').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + " Attention: salle 5 ";
+    }
+})
+WA.room.area.onEnter('mgSalle6').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + " Attention: salle 6 ";
+    }
+})
+WA.room.area.onEnter('mgSalle7').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + " Attention: salle 7 ";
+    }
+})
+WA.room.area.onEnter('mgSalle8').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + " Attention: salle 8 ";
+    }
+})
+WA.room.area.onEnter('mgSalleAmphi').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + " Attention: Ampphitéâtre ";
+    }
+})
+WA.room.area.onEnter('5min').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + "retard 5 minutes. ";
+    }
+})
+WA.room.area.onEnter('10min').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + "retard 10 minutes. ";
+    }
+})
+WA.room.area.onEnter('15min').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + "retard 15 minutes. ";
+    }
+})
+WA.room.area.onEnter('20min').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = WA.state.messGlob + "retard 20 minutes. ";
+    }
+})
+WA.room.area.onEnter('mgSuppression').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        WA.state.messGlob = "";
+    }
+})
+WA.room.area.onEnter('mgTest').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === "Fabien"){
+        globalMessage(WA.state.messGlob);
+    }
+})
+
 WA.room.area.onEnter('admin').subscribe(() =>{
     
     const playerName = WA.player.name;
@@ -252,9 +332,7 @@ function globalMessage(message:any){
         closable: true
     });
 }
-
-
-function affichager():void{ 
+function affichager():void{
     console.log("passage: ", WA.state.aAfficher);
     if(WA.state.aAfficher){
 
@@ -269,10 +347,4 @@ function affichager():void{
     }
     setTimeout(affichager,2000);
 }
-// WA.room.area.onLeave('zoneDepart').subscribe(() =>{
-//     WA.player.state.saveVariable("hasAffichager",false);
-   
-//     //closeAllPrompts();
-// })
-
 export {};

@@ -305,12 +305,13 @@ WA.room.area.onEnter('mgSuppression').subscribe(() =>{
     }
 })
 WA.room.area.onEnter('mgTest').subscribe(() =>{
+    WA.controls.disablePlayerControls();
+    
     const playerName = WA.player.name;
     if(playerName === "Fabien"){
         globalMessage(WA.state.messGlob);
     }
 })
-
 WA.room.area.onEnter('admin').subscribe(() =>{
     
     const playerName = WA.player.name;

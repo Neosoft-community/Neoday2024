@@ -5,7 +5,7 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 console.log('Script started successfully');
 
 let currentPopup: any = undefined;
-
+const nomAdmin = "Louis Evrard"
 let count:number =0;
 // Waiting for the API to be ready
 WA.onInit().then(() => {
@@ -222,113 +222,114 @@ function closePopup(){
 }
 WA.room.area.onEnter('mgSalle1').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + " Attention: salle 1 ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "salle 1, ";
     }
 })
 WA.room.area.onEnter('mgSalle2').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + " Attention: salle 2 ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "salle 2, ";
     }
 })
 WA.room.area.onEnter('mgSalle3').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + " Attention: salle 3 ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "salle 3, ";
     }
 })
 WA.room.area.onEnter('mgSalle4').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + " Attention: salle 4 ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "salle 4, ";
     }
 })
 WA.room.area.onEnter('mgSalle5').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + " Attention: salle 5 ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "salle 5, ";
     }
 })
 WA.room.area.onEnter('mgSalle6').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + " Attention: salle 6 ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "salle 6, ";
     }
 })
 WA.room.area.onEnter('mgSalle7').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + " Attention: salle 7 ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "salle 7, ";
     }
 })
 WA.room.area.onEnter('mgSalle8').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + " Attention: salle 8 ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "salle 8, ";
     }
 })
 WA.room.area.onEnter('mgSalleAmphi').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + " Attention: Ampphitéâtre ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "Ampphitéâtre, ";
+    }
+})
+WA.room.area.onEnter('vasCommencer').subscribe(() =>{
+    const playerName = WA.player.name;
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "l'intervention commenceras sous peu.| ";
     }
 })
 WA.room.area.onEnter('5min').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + "retard 5 minutes. ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "retard d'environ 5 minutes.| ";
     }
 })
 WA.room.area.onEnter('10min').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + "retard 10 minutes. ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "retard d'environ 10 minutes.| ";
     }
 })
 WA.room.area.onEnter('15min').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + "retard 15 minutes. ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "retard d'environ 15 minutes.| ";
     }
 })
 WA.room.area.onEnter('20min').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = WA.state.messGlob + "retard 20 minutes. ";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = WA.state.messGlob + "retard d'environ 20 minutes.| ";
     }
 })
 WA.room.area.onEnter('mgSuppression').subscribe(() =>{
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
-        WA.state.messGlob = "";
+    if(playerName === nomAdmin){
+        WA.state.messGlob = "Attention: ";
     }
 })
 WA.room.area.onEnter('mgTest').subscribe(() =>{
-    WA.controls.disablePlayerControls();
-    
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
+    if(playerName === nomAdmin){
         globalMessage(WA.state.messGlob);
     }
 })
 WA.room.area.onEnter('admin').subscribe(() =>{
     
     const playerName = WA.player.name;
-    if(playerName === "Fabien"){
+    if(playerName === nomAdmin){
         WA.state.aAfficher = true;
         //globalMessage( WA.state.messGlob ); 
     } 
     
 })
-WA.room.area.onLeave('admin').subscribe(() =>{
-    //closeAllPrompts();
-})
 function globalMessage(message:any){
     WA.ui.banner.openBanner({
         id: "banner",
         text: message,
-        bgColor: "#FAB1E0",
+        bgColor: "#FAB000",
         textColor: "#FFFFFF",
         closable: true
     });
@@ -338,11 +339,11 @@ function affichager():void{
     if(WA.state.aAfficher){
 
         globalMessage(WA.state.messGlob);
-        if(WA.player.name == "Fabien" && count != 1){
+        if(WA.player.name == nomAdmin && count != 1){
             count = count + 1;
-        }else if(WA.player.name == "Fabien" && count == 1){
+        }else if(WA.player.name == nomAdmin && count == 1){
             count              = 0;
-            WA.state.messGlob  = "";
+            WA.state.messGlob  = "Attention: ";
             WA.state.aAfficher = false;
         }
     }

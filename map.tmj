@@ -162,6 +162,44 @@
          "y":0
         }, 
         {
+         "draworder":"topdown",
+         "id":173,
+         "name":"zoneProgramme",
+         "objects":[
+                {
+                 "height":3799.39,
+                 "id":288,
+                 "name":"areaProgramme",
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/landing.neosoft.fr\/programme-journee"
+                        }, 
+                        {
+                         "name":"openWebsiteClosable",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"openWebsiteTrigger",
+                         "type":"string",
+                         "value":"onicon"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":4096.48,
+                 "x":11.76,
+                 "y":14.305
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2147483649, 0, 0, 0, 0, 2147483649, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1,
@@ -3769,6 +3807,34 @@
          "objects":[
                 {
                  "height":0,
+                 "id":258,
+                 "name":"messGlob",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"default",
+                         "type":"string",
+                         "value":"Attention: "
+                        }, 
+                        {
+                         "name":"readableBy",
+                         "type":"string",
+                         "value":""
+                        }, 
+                        {
+                         "name":"writableBy",
+                         "type":"string",
+                         "value":""
+                        }],
+                 "rotation":0,
+                 "type":"variable",
+                 "visible":true,
+                 "width":0,
+                 "x":1129.33333333334,
+                 "y":3224.66666666667
+                }, 
+                {
+                 "height":0,
                  "id":72,
                  "name":"aAfficher",
                  "point":true,
@@ -3792,8 +3858,8 @@
                  "type":"variable",
                  "visible":true,
                  "width":0,
-                 "x":1057,
-                 "y":3436.5
+                 "x":1053,
+                 "y":3228.5
                 }, 
                 {
                  "height":0,
@@ -4385,33 +4451,6 @@
                  "y":2306.5
                 }, 
                 {
-                 "height":3799.39393939394,
-                 "id":252,
-                 "name":"areaProgramme",
-                 "properties":[
-                        {
-                         "name":"openWebsite",
-                         "type":"string",
-                         "value":"https:\/\/landing.neosoft.fr\/programme-journee"
-                        }, 
-                        {
-                         "name":"openWebsiteClosable",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
-                         "name":"openWebsiteTrigger",
-                         "type":"string",
-                         "value":"onicon"
-                        }],
-                 "rotation":0,
-                 "type":"area",
-                 "visible":true,
-                 "width":4096.48484848485,
-                 "x":0.848484848484848,
-                 "y":4.72727272727273
-                }, 
-                {
                  "height":810,
                  "id":170,
                  "name":"chatzone",
@@ -4424,7 +4463,7 @@
                         {
                          "name":"focusable",
                          "type":"bool",
-                         "value":true
+                         "value":false
                         }, 
                         {
                          "name":"jitsiNoPrefix",
@@ -5057,34 +5096,6 @@
                  "y":2784.33335
                 }, 
                 {
-                 "height":0,
-                 "id":258,
-                 "name":"messGlob",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"default",
-                         "type":"string",
-                         "value":""
-                        }, 
-                        {
-                         "name":"readableBy",
-                         "type":"string",
-                         "value":""
-                        }, 
-                        {
-                         "name":"writableBy",
-                         "type":"string",
-                         "value":""
-                        }],
-                 "rotation":0,
-                 "type":"variable",
-                 "visible":true,
-                 "width":0,
-                 "x":1106.66666666667,
-                 "y":3436.66666666667
-                }, 
-                {
                  "height":147.5,
                  "id":256,
                  "name":"admin",
@@ -5169,8 +5180,8 @@
                  "type":"area",
                  "visible":true,
                  "width":54,
-                 "x":1947,
-                 "y":3219.75
+                 "x":1943,
+                 "y":3222.41666666667
                 }, 
                 {
                  "height":52.5,
@@ -5180,7 +5191,7 @@
                  "type":"area",
                  "visible":true,
                  "width":54,
-                 "x":2043,
+                 "x":2039,
                  "y":3223.75
                 }, 
                 {
@@ -5191,19 +5202,30 @@
                  "type":"area",
                  "visible":true,
                  "width":54,
-                 "x":2135,
+                 "x":2133.66666666667,
                  "y":3223.75
                 }, 
                 {
                  "height":52.5,
                  "id":282,
+                 "name":"vasCommencer",
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":54,
+                 "x":1078,
+                 "y":3349.75
+                }, 
+                {
+                 "height":52.5,
+                 "id":286,
                  "name":"5min",
                  "rotation":0,
                  "type":"area",
                  "visible":true,
                  "width":54,
-                 "x":1561,
-                 "y":3543.75
+                 "x":1556,
+                 "y":3541.75
                 }, 
                 {
                  "height":52.5,
@@ -5246,8 +5268,8 @@
                  "type":"area",
                  "visible":true,
                  "width":54,
-                 "x":2267,
-                 "y":3353.75
+                 "x":2263,
+                 "y":3355.08333333333
                 }, 
                 {
                  "height":52.5,
@@ -5669,8 +5691,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":172,
- "nextobjectid":285,
+ "nextlayerid":174,
+ "nextobjectid":289,
  "orientation":"orthogonal",
  "properties":[
         {

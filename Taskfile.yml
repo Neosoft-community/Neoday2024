@@ -14,3 +14,7 @@ tasks:
     cmds:
       - task: npm:install
       - task: npm:build
+
+  deploy:
+    cmds:
+      - task: build

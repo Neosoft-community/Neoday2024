@@ -3,7 +3,7 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
-
+let adminOn: boolean = false;
 let currentPopup: any = undefined;
 const nomAdmin = "Louis Evrard"
 let count:number =0;
@@ -216,17 +216,13 @@ WA.onInit().then(() => {
 }).catch(e => console.error(e));
 
 let allPopup: Array<any> = new Array()
-
 WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
-
-    
     console.log("testage du fonctionnage")
     const playerName = WA.player.name;
-
-    if(playerName != nomAdmin){
+    if(playerName != nomAdmin || adminOn){
         return;
     }
-    WA.controls.disablePlayerControls()
+    adminOn = true;
     WA.ui.openPopup("mgSalle1", 'salle 1', [{
         label: "ajouter",
         className: "primary",
@@ -422,7 +418,11 @@ WA.room.onLeaveLayer("mgZoneAdmin").subscribe(() => {
     }
     //helloWorldPopup.close();
 })
-
+WA.ui.onRemotePlayerClicked.subscribe((remotePlayer) => {
+    remotePlayer.addAction('Ask to tell a joke', () => {
+        console.log('I am NOT telling you a joke!');
+    });
+})
 
 
 

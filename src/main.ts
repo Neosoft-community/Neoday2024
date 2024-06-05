@@ -3,8 +3,9 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
-let adminOn: boolean = false;
 let currentPopup: any = undefined;
+let allPopup: Array<any> = new Array()
+
 const nomAdmin = "Louis Evrard"
 let count:number =0;
 // Waiting for the API to be ready
@@ -13,26 +14,31 @@ WA.onInit().then(() => {
     console.log('Scripting API ready');
     console.log('Player tags: ',WA.player.tags)
     affichager();
+    // WA.ui.actionBar.addButton({
+    //     id:"Programme",
+    //     type: 'action',
+    //     imageSrc: "https://cdn-icons-png.flaticon.com/512/1497/1497835.png",
+    //     toolTip: "string",
+    //     clickCallback: "openProgramme"
+    // })
     function verifierHeure() {
         // Obtenir l'heure actuelle
         var maintenant = new Date();
       
         // Définir l'heure à laquelle tu souhaites déclencher l'action
         var heureAction1 = new Date();
-        heureAction1.setHours(11); // Heure : 9 (exemple)
-        heureAction1.setMinutes(5); // Minutes : 0 (exemple)
+        heureAction1.setHours(11); // Heure : 11 (exemple)
+        heureAction1.setMinutes(5); // Minutes : 5 (exemple)
         heureAction1.setSeconds(0); // Secondes : 0 (exemple)
 
         var heureAction2 = new Date();
-        heureAction2.setHours(12); // Heure : 9 (exemple)
-        heureAction2.setMinutes(45); // Minutes : 0 (exemple)
-        heureAction2.setSeconds(0); // Secondes : 0 (exemple)
+        heureAction2.setHours(12);
+        heureAction2.setMinutes(45);
+        heureAction2.setSeconds(0); 
       
         // Vérifier si l'heure actuelle correspond à l'heure d'action
         if (maintenant.getTime() === heureAction1.getTime()) {
           // Déclencher ton action ici
-          //console.log("Action déclenchée à l'heure précise !");
-          //WA.chat.sendChatMessage("Action déclenchée à l'heure précise !", " Mr Robot");
             WA.ui.banner.openBanner({
                 id: "banner-test",
                 text: "On va bientôt commencer, rendez-vous dans l'amphi ! :)",
@@ -41,24 +47,11 @@ WA.onInit().then(() => {
                 closable: false
             });
         } else if (maintenant.getTime() === heureAction2.getTime()) {
-            // Déclencher ton action ici
-            //console.log("Action déclenchée à l'heure précise !");
-            //WA.chat.sendChatMessage("Action déclenchée à l'heure précise !", " Mr Robot");
             globalMessage("C'est bientôt la fin... Rendez-vous dans l'amphi pour la conclusion !");
-        //     WA.ui.banner.openBanner({
-        //       id: "banner-test",
-        //       text: "C'est bientôt la fin... Rendez-vous dans l'amphi pour la conclusion !",
-        //       bgColor: "#0055FF",
-        //       textColor: "#FFFFFF",
-        //       closable: false
-        //   });
-          } //else {
-            // Aucune des heures n'est encore passée
-            //console.log("Aucune des heures n'est encore passée.");
-        //}
+        }
     }
 
-      // Vérifier l'heure toutes les secondes
+    // Vérifier l'heure toutes les secondes
     setInterval(verifierHeure, 1000);
 
     /*WA.room.area.onEnter('indice1').subscribe(() => {
@@ -169,7 +162,7 @@ WA.onInit().then(() => {
         }]);
     })
 
-    WA.room.area.onLeave('indice9').subscribe(closePopup=*/
+    WA.room.area.onLeave('indice9').subscribe(closePopup)*/
 
 
     WA.room.area.onEnter('rs').subscribe(() => {
@@ -215,208 +208,187 @@ WA.onInit().then(() => {
 
 }).catch(e => console.error(e));
 
-let allPopup: Array<any> = new Array()
+
 WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     console.log("testage du fonctionnage")
+
+    /**
+     * verification que le joueurs entrant dans sur le layer est un joueur ayant droit
+     */
     const playerName = WA.player.name;
-    if(playerName != nomAdmin || adminOn){
+    if(playerName != nomAdmin){
         return;
     }
-    adminOn = true;
-    WA.ui.openPopup("mgSalle1", 'salle 1', [{
+
+    /**
+     * les different popeup permettant de rajouter les salles dans le message globale
+     */
+    allPopup.push(WA.ui.openPopup("mgSalle1", 'salle 1', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("salle 1,")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("mgSalle2", 'salle 2', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("mgSalle2", 'salle 2', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("salle 2,")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("mgSalle3", 'salle 3', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("mgSalle3", 'salle 3', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("salle 3,")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("mgSalle4", 'salle 4', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("mgSalle4", 'salle 4', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("salle 4,")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("mgSalle5", 'salle 5', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("mgSalle5", 'salle 5', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("salle 5,")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("mgSalle6", 'salle 6', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("mgSalle6", 'salle 6', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("salle 6,")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("mgSalle7", 'salle 7', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("mgSalle7", 'salle 7', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("salle 7,")
-            //popup.close();
-            
+
         }
-    }]);
-    WA.ui.openPopup("mgSalle8", 'salle 8', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("mgSalle8", 'salle 8', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("salle 8,")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("mgSalleAmphi", 'Amphi', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("mgSalleAmphi", 'Amphi', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("amphithéâtre,")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("5min", '5 minutes de retard', [{
+    }]));
+    /**
+     * les different popup permettant de rajouter lesretards dans le message globale
+     */
+    allPopup.push(WA.ui.openPopup("5min", '5 minutes de retard', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("5 minutes de retard.  ")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("10min", '10 minutes de retard', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("10min", '10 minutes de retard', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("10 minutes de retard.  ")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("15min", '15 minutes de retard', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("15min", '15 minutes de retard', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("15 minutes de retard.  ")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("20min", '20 minutes de retard', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("20min", '20 minutes de retard', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("20 minutes de retard.  ")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("vasCommencer", 'debut de conference', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("vasCommencer", 'debut de conference', [{
         label: "ajouter",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             addTextMg("la conférence commenceras sous peu.  ")
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("admin", 'Envoyer', [{
+    }]));
+    /**
+     * les trois popup permettant de supprimer, de vérifier et d'envoyer le message globale
+     */
+    allPopup.push(WA.ui.openPopup("admin", 'Envoyer', [{
         label: "envoyé",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             sendMg();
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("mgSuppression", 'Supprimer', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("mgSuppression", 'Supprimer', [{
         label: "supprimer",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             resetMg();
-            //popup.close();
             
         }
-    }]);
-    WA.ui.openPopup("mgTest", 'preview', [{
+    }]));
+    allPopup.push(WA.ui.openPopup("mgTest", 'preview', [{
         label: "preview",
         className: "primary",
         callback: (popup) => {
             console.log(popup)
-            // Close the popup when the "Close" button is pressed.
             globalMessage(WA.state.messGlob);
-            //popup.close();
             
         }
-    }]);
+    }]));
 })
-// Close the popup when we leave the zone.
+/**
+ * en sortant de la zone admin
+ * ferme tout les popeups
+ */
 WA.room.onLeaveLayer("mgZoneAdmin").subscribe(() => {
-    for(let pop in allPopup){
-        pop
-    }
-    //helloWorldPopup.close();
+    allPopup.forEach((element) => element.close());
 })
 WA.ui.onRemotePlayerClicked.subscribe((remotePlayer) => {
     remotePlayer.addAction('Ask to tell a joke', () => {
@@ -425,119 +397,20 @@ WA.ui.onRemotePlayerClicked.subscribe((remotePlayer) => {
 })
 
 
-
+/**
+ * ferme le popup courant
+ */
 function closePopup(){
     if (currentPopup !== undefined) {
         currentPopup.close();
         currentPopup = undefined;
     }
 }
-// WA.room.area.onEnter('mgSalle1').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "salle 1, ";
-//     }
-// })
-// WA.room.area.onEnter('mgSalle2').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "salle 2, ";
-//     }
-// })
-// WA.room.area.onEnter('mgSalle3').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "salle 3, ";
-//     }
-// })
-// WA.room.area.onEnter('mgSalle4').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "salle 4, ";
-//     }
-// })
-// WA.room.area.onEnter('mgSalle5').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "salle 5, ";
-//     }
-// })
-// WA.room.area.onEnter('mgSalle6').subscribe(() =>{
-//     const playerName = WA.player.name;
-    
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "salle 6, ";
-//     }
-// })
-// WA.room.area.onEnter('mgSalle7').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "salle 7, ";
-//     }
-// })
-// WA.room.area.onEnter('mgSalle8').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "salle 8, ";
-//     }
-// })
-// WA.room.area.onEnter('mgSalleAmphi').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "Ampphitéâtre, ";
-//     }
-// })
-// WA.room.area.onEnter('vasCommencer').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "l'intervention commenceras sous peu.| ";
-//     }
-// })
-// WA.room.area.onEnter('5min').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "retard d'environ 5 minutes.| ";
-//     }
-// })
-// WA.room.area.onEnter('10min').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "retard d'environ 10 minutes.| ";
-//     }
-// })
-// WA.room.area.onEnter('15min').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "retard d'environ 15 minutes.| ";
-//     }
-// })
-// WA.room.area.onEnter('20min').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = WA.state.messGlob + "retard d'environ 20 minutes.| ";
-//     }
-// })
-// WA.room.area.onEnter('mgSuppression').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.messGlob = "Attention: ";
-//     }
-// })
-// WA.room.area.onEnter('mgTest').subscribe(() =>{
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         globalMessage(WA.state.messGlob);
-//     }
-// })
-// WA.room.area.onEnter('admin').subscribe(() =>{
-    
-//     const playerName = WA.player.name;
-//     if(playerName === nomAdmin){
-//         WA.state.aAfficher = true;
-//         //globalMessage( WA.state.messGlob ); 
-//     } 
-    
-// })
+/**
+ * 
+ * @param message un string à afficher dans une border en haut de l'écran
+ * affiche une border avec message dedans
+ */
 function globalMessage(message:any){
     WA.ui.banner.openBanner({
         id: "banner",
@@ -547,6 +420,11 @@ function globalMessage(message:any){
         closable: true
     });
 }
+/**
+ * fonction s'actualisant toute les 2 secondes
+ * verifie si il y a un message a afficher
+ * si oui l'affiche pendant 2 cycles de l'admin
+ */
 function affichager():void{
     console.log("passage: ", WA.state.aAfficher);
     if(WA.state.aAfficher){
@@ -562,12 +440,24 @@ function affichager():void{
     }
     setTimeout(affichager,2000);
 }
+/**
+ * 
+ * @param txt un string 
+ * rajoute a la variable de map le string txt
+ */
 function addTextMg(txt:string):void{
     WA.state.messGlob   = WA.state.messGlob + " " + txt;  
 }
+/**
+ * passe la variable de map aAfficher a true pour que toute les instances vois le message
+ */
 function sendMg():void{
     WA.state.aAfficher = true;
 }
+/**
+ * supprime le contenue de la variable de map 
+ * ne laissant que l'introduction des popups globaux
+ */
 function resetMg():void{
     WA.state.messGlob = "Votre attention:"
 }

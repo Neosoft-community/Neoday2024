@@ -548,6 +548,60 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
         }
     }]));
 })
+
+
+
+WA.room.area.onEnter('salle1Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle1Popup", "↑ Salle1 ↑ \n→ Salle 2 à 8 → \n← Salle Amphi ←", []))
+})
+WA.room.area.onLeave('salle1Panneau').subscribe(closePopup)
+
+
+WA.room.area.onEnter('salle2Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle2Popup", "↑ Salle2 ↑ \n→ Salle 3 à 8 → \n← Salle 1 et Amphi ←", []))
+})
+WA.room.area.onLeave('salle2Panneau').subscribe(closePopup)
+
+
+WA.room.area.onEnter('salle3Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle3Popup", "↑ Salle3 ↑ \n→ Salle 4 à 5 → \n← Salle 1 à 2 et Amphi ←\n↓ Salle 6 à 8 ↓", []))
+})
+WA.room.area.onLeave('salle3Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salle4Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle4Popup", "↑ Salle4 ↑ \n→ Salle 5 → \n← Salle 1,2,3,8 et Amphi ←\n↓ Salle 6 à 7 ↓", []))
+})
+WA.room.area.onLeave('salle4Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salle5Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle5Popup", "↑ Salle5 ↑ \n← Salle 1,2,3,4,8 et Amphi ←\n↓ Salle 6 à 7 ↓", []))
+})
+WA.room.area.onLeave('salle5Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salle6Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle6Popup", "→ Salle 6 → \n↑ Salle 4,5 ↑ \n← Salle 1,2,3,4,8 et Amphi ←\n↓ Salle 7 ↓", []))
+})
+WA.room.area.onLeave('salle6Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salle7Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle7Popup", "→ Salle 7 → \n↑ Salle 4 à 6 ↑ \n← Salle 1,2,3,4,8 et Amphi ←", []))
+})
+WA.room.area.onLeave('salle7Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salle8Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle8Popup", "→ Salle 3 à 7 → \n← Salle 1,2 et Amphi ←\n↓ Salle 8 ↓", []))
+})
+WA.room.area.onLeave('salle8Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salleAPanneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salleAPopup", "↑ Amphithéâtre ↑ \n→ Salle 1 à 8 → \n", []))
+})
+WA.room.area.onLeave('salleAPanneau').subscribe(closePopup)
+
+
+
+
+
 /**
  * en sortant de la zone admin
  * ferme tout les popeups
@@ -555,11 +609,6 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
 WA.room.onLeaveLayer("mgZoneAdmin").subscribe(() => {
     allPopup.forEach((element) => element.close());
     allPopup.slice(0, allPopup.length)
-})
-WA.ui.onRemotePlayerClicked.subscribe((remotePlayer) => {
-    remotePlayer.addAction('Ask to tell a joke', () => {
-        console.log('I am NOT telling you a joke!');
-    });
 })
 
 

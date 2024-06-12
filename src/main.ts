@@ -3,7 +3,7 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
-let allPopup: Array<any> = new Array()
+let allPopup: Array<any> = new Array();
 
 const nomAdmin = "Tom Pain"
 let count:number =0;
@@ -234,8 +234,6 @@ WA.onInit().then(() => {
 
     WA.room.area.onLeave('bot1').subscribe(closePopup)
 
-
-
     WA.room.area.onEnter('bot2').subscribe(() => {
         let test: any;
         test = WA.player.state.foo,
@@ -329,8 +327,7 @@ WA.onInit().then(() => {
                 }]));
     
             }
-        })
-    
+    })
 
     WA.room.area.onLeave('bot3').subscribe(closePopup)
 
@@ -360,9 +357,8 @@ WA.onInit().then(() => {
                 }
             }]));
         }
-        })
+    })
     
-
     WA.room.area.onLeave('tresor').subscribe(closePopup)
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
@@ -375,7 +371,6 @@ WA.onInit().then(() => {
 
 
 WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
-    console.log("testage du fonctionnage")
 
     /**
      * verification que le joueurs entrant dans sur le layer est un joueur ayant droit
@@ -391,8 +386,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalle1", 'salle 1', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("salle 1,")
             
         }
@@ -400,8 +394,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalle2", 'salle 2', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("salle 2,")
             
         }
@@ -409,8 +402,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalle3", 'salle 3', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("salle 3,")
             
         }
@@ -418,8 +410,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalle4", 'salle 4', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("salle 4,")
             
         }
@@ -427,8 +418,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalle5", 'salle 5', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("salle 5,")
             
         }
@@ -436,8 +426,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalle6", 'salle 6', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("salle 6,")
             
         }
@@ -445,8 +434,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalle7", 'salle 7', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("salle 7,")
 
         }
@@ -454,8 +442,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalle8", 'salle 8', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("salle 8,")
             
         }
@@ -463,8 +450,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalleAmphi", 'Amphi', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("amphithéâtre,")
             
         }
@@ -475,8 +461,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("5min", '5 minutes de retard', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("5 minutes de retard.  ")
             
         }
@@ -484,8 +469,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("10min", '10 minutes de retard', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("10 minutes de retard.  ")
             
         }
@@ -493,8 +477,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("15min", '15 minutes de retard', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("15 minutes de retard.  ")
             
         }
@@ -502,8 +485,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("20min", '20 minutes de retard', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("20 minutes de retard.  ")
             
         }
@@ -511,8 +493,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("vasCommencer", 'debut de conference', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("la conférence commenceras sous peu.  ")
             
         }
@@ -523,8 +504,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("admin", 'Envoyer', [{
         label: "envoyé",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             sendMg();
             
         }
@@ -532,8 +512,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSuppression", 'Supprimer', [{
         label: "supprimer",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             resetMg();
             
         }
@@ -541,28 +520,73 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgTest", 'preview', [{
         label: "preview",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             globalMessage(WA.state.messGlob);
             
         }
     }]));
 })
+
+
+
+WA.room.area.onEnter('salle1Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle1Popup", "↑ Salle1 ↑ \n→ Salle 2 à 8 → \n← Salle Amphi ←", []))
+})
+WA.room.area.onLeave('salle1Panneau').subscribe(closePopup)
+
+
+WA.room.area.onEnter('salle2Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle2Popup", "↑ Salle2 ↑ \n→ Salle 3 à 8 → \n← Salle 1 et Amphi ←", []))
+})
+WA.room.area.onLeave('salle2Panneau').subscribe(closePopup)
+
+
+WA.room.area.onEnter('salle3Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle3Popup", "↑ Salle3 ↑ \n→ Salle 4 à 5 → \n← Salle 1 à 2 et Amphi ←\n↓ Salle 6 à 8 ↓", []))
+})
+WA.room.area.onLeave('salle3Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salle4Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle4Popup", "↑ Salle4 ↑ \n→ Salle 5 → \n← Salle 1,2,3,8 et Amphi ←\n↓ Salle 6 à 7 ↓", []))
+})
+WA.room.area.onLeave('salle4Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salle5Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle5Popup", "↑ Salle5 ↑ \n← Salle 1,2,3,4,8 et Amphi ←\n↓ Salle 6 à 7 ↓", []))
+})
+WA.room.area.onLeave('salle5Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salle6Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle6Popup", "→ Salle 6 → \n↑ Salle 4,5 ↑ \n← Salle 1,2,3,4,8 et Amphi ←\n↓ Salle 7 ↓", []))
+})
+WA.room.area.onLeave('salle6Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salle7Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle7Popup", "→ Salle 7 → \n↑ Salle 4 à 6 ↑ \n← Salle 1,2,3,4,8 et Amphi ←", []))
+})
+WA.room.area.onLeave('salle7Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salle8Panneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salle8Popup", "→ Salle 3 à 7 → \n← Salle 1,2 et Amphi ←\n↓ Salle 8 ↓", []))
+})
+WA.room.area.onLeave('salle8Panneau').subscribe(closePopup)
+
+WA.room.area.onEnter('salleAPanneau').subscribe(() => {
+    allPopup.push(WA.ui.openPopup("salleAPopup", "↑ Amphithéâtre ↑ \n→ Salle 1 à 8 → \n", []))
+})
+WA.room.area.onLeave('salleAPanneau').subscribe(closePopup)
+
+
+
+
+
 /**
  * en sortant de la zone admin
  * ferme tout les popeups
  */
 WA.room.onLeaveLayer("mgZoneAdmin").subscribe(() => {
-    allPopup.forEach((element) => element.close());
-    allPopup.slice(0, allPopup.length)
+    closePopup();
 })
-WA.ui.onRemotePlayerClicked.subscribe((remotePlayer) => {
-    remotePlayer.addAction('Ask to tell a joke', () => {
-        console.log('I am NOT telling you a joke!');
-    });
-})
-
-
 /**
  * ferme le popup courant
  */
@@ -592,7 +616,6 @@ function globalMessage(message:any){
  * si oui l'affiche pendant 2 cycles de l'admin
  */
 function affichager():void{
-    console.log("passage: ", WA.state.aAfficher);
     if(WA.state.aAfficher){
 
         globalMessage(WA.state.messGlob);

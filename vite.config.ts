@@ -9,6 +9,7 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 index: "./index.html",
+                plan: "./src/planning.html",
                 ...getMapsScripts(maps),
             },
         },

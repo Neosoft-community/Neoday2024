@@ -9,6 +9,21 @@ const nomAdmin = "Tom Pain"
 let count:number =0;
 // Waiting for the API to be ready
 WA.onInit().then(() => {
+    WA.ui.website.open({
+        url             : "src/planning.html",
+        position: {
+            vertical    : "bottom",
+            horizontal  : "left",
+        },
+        size: {
+            height      : "17vh",
+            width       : "15vw",
+        },
+        margin: {
+            bottom      : "0vh",
+        },
+        allowApi: true
+    })
     WA.player.state.foo = 0
     console.log('Scripting API ready');
     console.log('Player tags: ',WA.player.tags)

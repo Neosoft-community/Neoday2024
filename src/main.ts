@@ -371,7 +371,6 @@ WA.onInit().then(() => {
 
 
 WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
-    console.log("testage du fonctionnage")
 
     /**
      * verification que le joueurs entrant dans sur le layer est un joueur ayant droit
@@ -387,8 +386,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalle1", 'salle 1', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("salle 1,")
             
         }
@@ -396,8 +394,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalle2", 'salle 2', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("salle 2,")
             
         }
@@ -405,8 +402,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
     allPopup.push(WA.ui.openPopup("mgSalle3", 'salle 3', [{
         label: "ajouter",
         className: "primary",
-        callback: (popup) => {
-            console.log(popup)
+        callback: () => {
             addTextMg("salle 3,")
             
         }
@@ -609,12 +605,10 @@ WA.room.onLeaveLayer("mgZoneAdmin").subscribe(() => {
  * ferme le popup courant
  */
 function closePopup(){
-    console.log(allPopup)
     allPopup.forEach((element =>{
         element.close()
     }))
     allPopup.splice(0, allPopup.length)
-    console.log(allPopup)
 }
 /**
  * 
@@ -636,7 +630,6 @@ function globalMessage(message:any){
  * si oui l'affiche pendant 2 cycles de l'admin
  */
 function affichager():void{
-    console.log("passage: ", WA.state.aAfficher);
     if(WA.state.aAfficher){
 
         globalMessage(WA.state.messGlob);

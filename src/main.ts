@@ -605,8 +605,6 @@ WA.room.area.onLeave('salleAPanneau').subscribe(closePopup)
 WA.room.onLeaveLayer("mgZoneAdmin").subscribe(() => {
     closePopup();
 })
-
-
 /**
  * ferme le popup courant
  */

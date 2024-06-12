@@ -3,7 +3,7 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
-let allPopup: Array<any> = new Array()
+let allPopup: Array<any> = new Array();
 
 const nomAdmin = "Tom Pain"
 let count:number =0;
@@ -234,8 +234,6 @@ WA.onInit().then(() => {
 
     WA.room.area.onLeave('bot1').subscribe(closePopup)
 
-
-
     WA.room.area.onEnter('bot2').subscribe(() => {
         let test: any;
         test = WA.player.state.foo,
@@ -329,8 +327,7 @@ WA.onInit().then(() => {
                 }]));
     
             }
-        })
-    
+    })
 
     WA.room.area.onLeave('bot3').subscribe(closePopup)
 
@@ -360,9 +357,8 @@ WA.onInit().then(() => {
                 }
             }]));
         }
-        })
+    })
     
-
     WA.room.area.onLeave('tresor').subscribe(closePopup)
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
@@ -607,8 +603,7 @@ WA.room.area.onLeave('salleAPanneau').subscribe(closePopup)
  * ferme tout les popeups
  */
 WA.room.onLeaveLayer("mgZoneAdmin").subscribe(() => {
-    allPopup.forEach((element) => element.close());
-    allPopup.slice(0, allPopup.length)
+    closePopup();
 })
 
 
@@ -616,10 +611,12 @@ WA.room.onLeaveLayer("mgZoneAdmin").subscribe(() => {
  * ferme le popup courant
  */
 function closePopup(){
+    console.log(allPopup)
     allPopup.forEach((element =>{
         element.close()
     }))
     allPopup.splice(0, allPopup.length)
+    console.log(allPopup)
 }
 /**
  * 

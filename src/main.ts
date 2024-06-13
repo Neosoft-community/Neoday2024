@@ -1,7 +1,9 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
-
+/**
+ * pour la zone de telechargement modifier les propriété du calque "zone DeTelechargement" dans tiled
+ */
 console.log('Script started successfully');
 let allPopup: Array<any> = new Array();
 

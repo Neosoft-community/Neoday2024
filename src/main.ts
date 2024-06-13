@@ -216,6 +216,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('fdn').subscribe(closePopup)
 
     WA.room.area.onEnter('bot1').subscribe(() => {
+        
         let test: any;
         test = WA.player.state.foo,
         WA.player.state.foo = test;

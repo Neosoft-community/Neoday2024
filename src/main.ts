@@ -325,7 +325,6 @@ WA.onInit().then(() => {
                     callback: () => {
                         closePopup();
                     }
-               
                 }]));
             WA.player.state.foo = test+1
     
@@ -682,6 +681,8 @@ function resetMg():void{
 }
 
 /**
+ * 
+ * fonction permettant de mettre a jours la variable de map: statistique
  * 
  * @param categorie categorie à modifier
  * @param indice    indice de l'element a modifier

@@ -1,10 +1,12 @@
 /// <reference types="@workadventure/iframe-api-typings" />
 
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
-
 console.log('Script started successfully');
 let allPopup: Array<any> = new Array();
-
+let passageStat = {
+    "indices":  [false,false,false,false,false,false,false,false,false],
+    "quetes":   [false,false,false,false]
+}
 const nomAdmin = "Tom Pain"
 let count:number =0;
 // Waiting for the API to be ready
@@ -69,6 +71,7 @@ WA.onInit().then(() => {
     setInterval(verifierHeure, 1000);
 
     WA.room.area.onEnter('indice1').subscribe(() => {
+        editStat("indices",0);
         // const today = new Date();
         // const time = today.getHours() + ":" + today.getMinutes();
         allPopup.push(WA.ui.openPopup("indice1Popup", "Bonjour ! Voici mon indice : C'est 5 en romain !", [{
@@ -83,6 +86,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice1').subscribe(closePopup)
 
     WA.room.area.onEnter('indice2').subscribe(() => {
+        editStat("indices",1);
         allPopup.push (WA.ui.openPopup("indice2Popup", "Voici un nouvel indice : C'est la meilleure note possible à l'école !", [{
             label: "Merci !",
             className: "primary",
@@ -95,6 +99,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice2').subscribe(closePopup)
 
     WA.room.area.onEnter('indice3').subscribe(() => {
+        editStat("indices",2);
         allPopup.push (WA.ui.openPopup("indice3Popup", "Un nouvel indice, ici tu trouveras : Mon 3eme est à la même place dans l'alphabet !", [{
             label: "Merci !",
             className: "primary",
@@ -107,6 +112,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice3').subscribe(closePopup)
 
     WA.room.area.onEnter('indice4').subscribe(() => {
+        editStat("indices",3);
         allPopup.push (WA.ui.openPopup("indice4Popup", "Bonjour, voici mon indice : Je suis l'onomatopée préférée de Denis Brognard !", [{
             label: "OK, merci !",
             className: "primary",
@@ -119,6 +125,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice4').subscribe(closePopup)
 
     WA.room.area.onEnter('indice5').subscribe(() => {
+        editStat("indices",4);
         allPopup.push (WA.ui.openPopup("indice5Popup", "Salut ! Allez, voici un petit indice : Je suis la première lettre du nom de notre entreprise !", [{
             label: "Merci !",
             className: "primary",
@@ -131,6 +138,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice5').subscribe(closePopup)
 
     WA.room.area.onEnter('indice6').subscribe(() => {
+        editStat("indices",5);
         allPopup.push (WA.ui.openPopup("indice6Popup", "Bonjour ! Voici mon indice : Je suis l'initiale de la troisième valeur chez Néosoft !", [{
             label: "OK, merci !",
             className: "primary",
@@ -143,6 +151,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice6').subscribe(closePopup)
 
     WA.room.area.onEnter('indice7').subscribe(() => {
+        editStat("indices",6);
         allPopup.push (WA.ui.openPopup("indice7Popup", "Hello ! Indice : Je suis imprimé sur la poitrine d'un super héros très connu !", [{
             label: "OK, merci !",
             className: "primary",
@@ -155,6 +164,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice7').subscribe(closePopup)
 
     WA.room.area.onEnter('indice8').subscribe(() => {
+        editStat("indices",7);
         allPopup.push ( WA.ui.openPopup("indice8Popup", "Indice : Je suis la lettre la plus utilisée dans la langue française !", [{
             label: "OK, merci !",
             className: "primary",
@@ -167,6 +177,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice8').subscribe(closePopup)
 
     WA.room.area.onEnter('indice9').subscribe(() => {
+        editStat("indices",8);
         allPopup.push (WA.ui.openPopup("indice9Popup", "Mon tout est le moment que tout le monde attend !", [{
             label: "Rendez-vous dans l'enquete de satisfaction pour répondre !",
             className: "primary",
@@ -216,6 +227,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('fdn').subscribe(closePopup)
 
     WA.room.area.onEnter('bot1').subscribe(() => {
+        editStat("quetes",0);
         let test: any;
         test = WA.player.state.foo,
         WA.player.state.foo = test;
@@ -250,6 +262,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('bot1').subscribe(closePopup)
 
     WA.room.area.onEnter('bot2').subscribe(() => {
+        editStat("quetes",1);
         let test: any;
         test = WA.player.state.foo,
         WA.player.state.foo = test;
@@ -299,6 +312,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('bot2').subscribe(closePopup)
 
     WA.room.area.onEnter('bot3').subscribe(() => {
+        editStat("quetes",2);
         let test: any;
         test = WA.player.state.foo,
         WA.player.state.foo = test;
@@ -347,6 +361,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('bot3').subscribe(closePopup)
 
     WA.room.area.onEnter('tresor').subscribe(() => {
+        editStat("quetes",3);
         let test: any;
         test = WA.player.state.foo,
         WA.player.state.foo = test;
@@ -666,4 +681,32 @@ function resetMg():void{
     WA.state.messGlob = "Votre attention:"
 }
 
+/**
+ * 
+ * @param categorie categorie à modifier
+ * @param indice    indice de l'element a modifier
+ */
+function editStat(categorie:string,indice:number):void{
+    let k:any = WA.state.loadVariable("statistique");
+    if(categorie == "indices"){
+        k = JSON.parse(k);
+        if(!passageStat.indices[indice]){
+            passageStat.indices[indice] = true;
+            k.indices[indice] += 1;
+            console.log("la valeur de ka est : ",k);
+            WA.state.saveVariable("statistique", JSON.stringify(k));
+
+        }
+    }else if(categorie == "quetes"){
+        if(!passageStat.quetes[indice]){
+            k = JSON.parse(k);
+            k.quetes[indice] += 1;
+            console.log("la valeur de ka est : ",k);
+            WA.state.saveVariable("statistique", JSON.stringify(k));
+        }
+    }else{
+        console.log("categorie non existante, statistique non modifié.")
+    }
+    console.log("statistique : ",WA.state.statistique);
+}
 export {};

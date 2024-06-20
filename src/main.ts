@@ -4,9 +4,31 @@ import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 console.log('Script started successfully');
 let allPopup: Array<any> = new Array();
 let passageStat = {
-    "indices":  [false,false,false,false,false,false,false,false,false],
-    "quetes":   [false,false,false,false]
+    "salles":           [false,false,false,false,false,false,false,false,false],
+    "conf1":            [false,false,false,false,false,false,false,false,false],
+    "conf2":            [false,false,false,false,false,false,false,false,false],
+    "conf3":            [false,false,false,false,false,false,false,false,false],
+    "indices":          [false,false,false,false,false,false,false,false,false],
+    "indicesTotaux":    [false,false,false,false,false,false,false,false,false],
+    "quetes":           [false,false,false,false],
+    "quetesTot":        [false,false,false,false],
+    "quetesTard":       [false,false,false,false],
+    "quetesTotales":    [false,false,false,false],
 }
+/*
+{
+    "salles":           [0,0,0,0,0,0,0,0,0],
+    "conf1":            [0,0,0,0,0,0,0,0,0],
+    "conf2":            [0,0,0,0,0,0,0,0,0],
+    "conf3":            [0,0,0,0,0,0,0,0,0],
+    "indices":          [0,0,0,0,0,0,0,0,0],
+    "indicesTotaux":    [0,0,0,0,0,0,0,0,0],
+    "quetes":           [0,0,0,0],
+    "quetesTot":        [0,0,0,0],
+    "quetesTard":       [0,0,0,0],
+    "quetesTotales":    [0,0,0,0],
+}
+*/
 const nomAdmin = "Tom Pain"
 let count:number =0;
 // Waiting for the API to be ready
@@ -227,7 +249,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('fdn').subscribe(closePopup)
 
     WA.room.area.onEnter('bot1').subscribe(() => {
-        editStat("quetes",0);
+        editStat("quetesTard",0);
         let test: any;
         test = WA.player.state.foo,
         WA.player.state.foo = test;
@@ -256,13 +278,12 @@ WA.onInit().then(() => {
             }]));
             console.log("test else : ", WA.player.state.foo)
         }
-        })
+    })
     
 
     WA.room.area.onLeave('bot1').subscribe(closePopup)
 
     WA.room.area.onEnter('bot2').subscribe(() => {
-        editStat("quetes",1);
         let test: any;
         test = WA.player.state.foo,
         WA.player.state.foo = test;
@@ -270,6 +291,7 @@ WA.onInit().then(() => {
 
         if (test < 1)
             {
+                editStat("quetesTot",1);
                 allPopup.push(WA.ui.openPopup("bot2Popup", "Laisse moi bronzer, tu veux bien ?", [{
                     label: "Euuuh.. ok ?",
                     className: 'primary',
@@ -282,6 +304,7 @@ WA.onInit().then(() => {
 
         else if (test == 1)
         {
+            editStat("quetesTard",1);
             allPopup.push(WA.ui.openPopup("bot2Popup", "Un trésor ? Je n'en sais rien, essaye d'aller parler à mon cousin.. Je crois qu'il n'ose pas rentrer dans le labyrinthe, tu le trouveras là bas !", [{
                     label: "Bien sûr !",
                     className: 'primary',
@@ -297,6 +320,7 @@ WA.onInit().then(() => {
 
         else
         {
+            editStat("quetesTard",1);
             allPopup.push(WA.ui.openPopup("bot2Popup", "Es-tu allé au labyrinthe ?", [{
                     label: "Pas encore",
                     className: 'primary',
@@ -306,19 +330,19 @@ WA.onInit().then(() => {
                 }]));
     
         }
-        })
+    })
     
 
     WA.room.area.onLeave('bot2').subscribe(closePopup)
 
     WA.room.area.onEnter('bot3').subscribe(() => {
-        editStat("quetes",2);
         let test: any;
         test = WA.player.state.foo,
         WA.player.state.foo = test;
         
         if (test == 2)
             {
+                editStat("quetesTard",2);
                 allPopup.push(WA.ui.openPopup("bot3Popup", "Au Nord-Est tu iras, cette pelle tu prendras, et à la croix tu te rendras..", [{
                     label: "Alors il existe ?",
                     className: 'primary',
@@ -333,6 +357,7 @@ WA.onInit().then(() => {
 
         if (test < 2)
         {
+            editStat("quetestot",2);
             allPopup.push(WA.ui.openPopup("bot3Popup", "Reviens plus tard...", [{
                 label: "Ok",
                 className: 'primary',
@@ -346,6 +371,7 @@ WA.onInit().then(() => {
             
         if (test > 2)
             {
+                editStat("quetesTard",2);
                 allPopup.push(WA.ui.openPopup("bot3Popup", "Bon, tu l'as récupéré ce trésor ?", [{
                     label: "Non, pas encore",
                     className: 'primary',
@@ -360,12 +386,12 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('bot3').subscribe(closePopup)
 
     WA.room.area.onEnter('tresor').subscribe(() => {
-        editStat("quetes",3);
         let test: any;
         test = WA.player.state.foo,
         WA.player.state.foo = test;
         if (test <= 2)
         {
+            editStat("quetesTot",3);
             allPopup.push(WA.ui.openPopup("tresorPopup1", "Je me demande ce qu'il se cache ici.. Tiens un ticket de parking ? Peut être que quelqu'un l'a égaré ? Je ferai bien d'aller voir là bas..", [{
                 label: "Fermer",
                 className: 'primary',
@@ -377,6 +403,7 @@ WA.onInit().then(() => {
         }
         else
         {
+            editStat("quetesTard",3);
             allPopup.push(WA.ui.openPopup("tresorPopup1", "Le trésor est.. le nom de ce fameux chanteur !", [{
                 label: "Découvrir le trésor !",
                 className: 'primary',
@@ -605,6 +632,46 @@ WA.room.area.onEnter('salleAPanneau').subscribe(() => {
 })
 WA.room.area.onLeave('salleAPanneau').subscribe(closePopup)
 
+//mise à jour des valeurs 
+WA.room.area.onEnter('salle1').subscribe(() => {
+    editStat("salles",1)
+})
+WA.room.area.onEnter('salle2').subscribe(() => {
+    editStat("salles",2)
+})
+WA.room.area.onEnter('salle3').subscribe(() => {
+    editStat("salles",3)
+})
+WA.room.area.onEnter('salle3').subscribe(() => {
+    editStat("salles",3)
+})
+WA.room.area.onEnter('salle4').subscribe(() => {
+    editStat("salles",4)
+})
+WA.room.area.onEnter('salle5').subscribe(() => {
+    editStat("salles",5)
+})
+WA.room.area.onEnter('salle6').subscribe(() => {
+    editStat("salles",6)
+})
+WA.room.area.onEnter('salle7').subscribe(() => {
+    editStat("salles",7)
+})
+WA.room.area.onEnter('salle8').subscribe(() => {
+    editStat("salles",8)
+})
+WA.room.area.onEnter('amphi').subscribe(() => {
+    editStat("salles",0)
+})
+WA.room.area.onEnter("mgSalle6").subscribe(()=>{
+    const playerName = WA.player.name;
+    if(playerName != nomAdmin){
+        return;
+    }
+
+    // Utilisation
+    MiseEnFormeStat();
+})
 
 
 
@@ -679,7 +746,6 @@ function sendMg():void{
 function resetMg():void{
     WA.state.messGlob = "Votre attention:"
 }
-
 /**
  * 
  * fonction permettant de mettre a jours la variable de map: statistique
@@ -689,25 +755,115 @@ function resetMg():void{
  */
 function editStat(categorie:string,indice:number):void{
     let k:any = WA.state.loadVariable("statistique");
+    k = JSON.parse(k);
+
+
     if(categorie == "indices"){
-        k = JSON.parse(k);
+        k.indicesTotaux[indice] += 1;
         if(!passageStat.indices[indice]){
             passageStat.indices[indice] = true;
             k.indices[indice] += 1;
-            console.log("la valeur de ka est : ",k);
-            WA.state.saveVariable("statistique", JSON.stringify(k));
+            k.indicesTotaux[indice] += 1;
 
         }
-    }else if(categorie == "quetes"){
+    }
+    
+    else if(categorie == "quetesTot"){
+        k.quetesTotales[indice] += 1;
         if(!passageStat.quetes[indice]){
-            k = JSON.parse(k);
             k.quetes[indice] += 1;
-            console.log("la valeur de ka est : ",k);
-            WA.state.saveVariable("statistique", JSON.stringify(k));
+            k.quetesTot[indice] += 1;
         }
-    }else{
+    }
+    
+    else if(categorie == "quetesTard"){
+        k.quetesTotales[indice] += 1;
+        if(!passageStat.quetes[indice]){
+            k.quetes[indice] += 1;
+            k.quetesTard[indice] += 1;
+        }
+    }
+    
+    else if(categorie == "salles"){
+        var maintenant = new Date();
+      
+        // Définir l'heure des conférences
+        var heureConf1 = new Date();
+        var heureConf2 = new Date();
+        var heureConf3 = new Date();
+        var finConf    = new Date();
+
+        heureConf1.setHours(12);
+        heureConf1.setMinutes(0);
+        heureConf1.setSeconds(0);
+        heureConf2.setHours(12); 
+        heureConf2.setMinutes(15);
+        heureConf2.setSeconds(0);
+        heureConf3.setHours(12); 
+        heureConf3.setMinutes(30); 
+        heureConf3.setSeconds(0); 
+        finConf.setHours(12); 
+        finConf.setMinutes(30); 
+        finConf.setSeconds(0); 
+
+
+        if(!passageStat.salles[indice]){
+            k.salles[indice] += 1;
+            passageStat.salles[indice] = true;
+        }
+
+        if(maintenant>heureConf1 && maintenant< heureConf2){
+            if(!passageStat.conf1[indice]){
+                k.conf1[indice] += 1;
+                passageStat.conf1[indice] = true;
+            }
+        }else if(maintenant> heureConf2 && maintenant< heureConf3){
+            if(!passageStat.conf2[indice]){
+                k.conf2[indice] += 1;
+                passageStat.conf2[indice] = true;
+            }
+        }else if(maintenant> heureConf3 && maintenant< finConf){
+            if(!passageStat.conf3[indice]){
+                k.conf3[indice] += 1;
+                passageStat.conf3[indice] = true;
+            }
+        }
+    }
+    
+    else{
         console.log("categorie non existante, statistique non modifié.")
     }
+    
+    WA.state.saveVariable("statistique", JSON.stringify(k));
     console.log("statistique : ",WA.state.statistique);
 }
+/**
+ * 
+ * fonction qui met en forme la variable statistique et l'envoie dans la console de commande
+ * 
+ */
+function MiseEnFormeStat() {
+
+    //recuperation de la variable et decoupage
+    let k:any = WA.state.loadVariable("statistique");
+    k = JSON.parse(k);
+
+    //creation des données
+    let data = k.salles[0] +" sont allez en amphi, " + k.conf1[0] +" de midi à midi quinze, " + k.conf2[0] +" de midi quinze à midi trente, " + k.conf3[0] +" de midi trente à midi quarante-cinq. \n" 
+    for (let i = 1; i < k.salles .length; i++) {
+        data = data + k.salles[i] +" sont allez en salle " + i + ", "+ k.conf1[i] +" de midi à midi quinze, " + k.conf2[i] +" de midi quinze à midi trente, " + k.conf3[i] +" de midi trente à midi quarante-cinq. \n" 
+
+    }
+    for (let i = 0; i < k.indices.length; i++) {
+        data = data + k.indices[i]+" personnes sont allé voir le bot pour l'indice "+ (i-1+2) +" et ont leur a adressé la paroles " + k.indicesTotaux[i] + " fois\n"
+    }
+    for (let i = 0; i < k.quetes .length; i++) {
+        data = data +"le bot numéro "+ (i-1+2)+" de la quetes a parlé à " + k.quetes[i] + " personnes differentes et à parler un total de "+ k.quetesTotales[i]+" fois. "+k.quetesTot[i]+" lui ont parlé trop tôt et " + k.quetesTard[i] + " ont recuperée son information\n"
+    }
+
+    //affichage dans la console
+    console.log(data);
+}
+
+
 export {};

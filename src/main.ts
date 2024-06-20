@@ -664,11 +664,6 @@ WA.room.area.onEnter('amphi').subscribe(() => {
     editStat("salles",0)
 })
 WA.room.area.onEnter("mgSalle6").subscribe(()=>{
-    const playerName = WA.player.name;
-    if(playerName != nomAdmin){
-        return;
-    }
-
     // Utilisation
     MiseEnFormeStat();
 })

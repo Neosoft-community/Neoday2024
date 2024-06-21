@@ -4299,7 +4299,7 @@
                  "y":2014
                 }, 
                 {
-                 "height":84,
+                 "height":111,
                  "id":219,
                  "name":"chatzone",
                  "properties":[
@@ -4316,9 +4316,9 @@
                  "rotation":0,
                  "type":"area",
                  "visible":true,
-                 "width":156.667,
-                 "x":914.6665,
-                 "y":1365
+                 "width":296.667,
+                 "x":794.6665,
+                 "y":1338
                 }, 
                 {
                  "height":260.242333333333,

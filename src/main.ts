@@ -68,6 +68,21 @@ WA.onInit().then(() => {
     // Vérifier l'heure toutes les secondes
     setInterval(verifierHeure, 1000);
 
+    //area stand conseil et agilité message
+    WA.room.area.onEnter('StandConseil').subscribe(() => {
+        // const today = new Date();
+        // const time = today.getHours() + ":" + today.getMinutes();
+        allPopup.push(WA.ui.openPopup("StandConseil", "Merci de vous rendre en salle 5 !", [{
+            label: "OK !",
+            className: "primary",
+            callback: () => {
+                closePopup();
+            }
+        }]));
+    })
+
+    WA.room.area.onLeave('StandConseil').subscribe(closePopup)
+
     WA.room.area.onEnter('indice1').subscribe(() => {
         // const today = new Date();
         // const time = today.getHours() + ":" + today.getMinutes();

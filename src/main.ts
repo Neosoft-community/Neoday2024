@@ -372,7 +372,7 @@ WA.onInit().then(() => {
 
         if (test < 2)
         {
-            editStat("quetestot",2);
+            editStat("quetesTot",2);
             allPopup.push(WA.ui.openPopup("bot3Popup", "Reviens plus tard...", [{
                 label: "Ok",
                 className: 'primary',
@@ -777,19 +777,29 @@ function editStat(categorie:string,indice:number):void{
 
         }
     }
-    
+
     else if(categorie == "quetesTot"){
         k.quetesTotales[indice] += 1;
+ 
         if(!passageStat.quetes[indice]){
+            passageStat.quetes[indice] = true;
             k.quetes[indice] += 1;
+        }
+        if(!passageStat.quetesTot[indice]){
+            passageStat.quetesTot[indice] = true;
             k.quetesTot[indice] += 1;
         }
     }
-    
+   
     else if(categorie == "quetesTard"){
+        console.log(passageStat);
         k.quetesTotales[indice] += 1;
         if(!passageStat.quetes[indice]){
             k.quetes[indice] += 1;
+            passageStat.quetes[indice] = true;
+        }
+        if(!passageStat.quetesTard[indice]){
+            passageStat.quetesTard[indice] = true;
             k.quetesTard[indice] += 1;
         }
     }

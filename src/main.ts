@@ -657,9 +657,6 @@ WA.room.area.onEnter('salle2').subscribe(() => {
 WA.room.area.onEnter('salle3').subscribe(() => {
     editStat("salles",3)
 })
-WA.room.area.onEnter('salle3').subscribe(() => {
-    editStat("salles",3)
-})
 WA.room.area.onEnter('salle4').subscribe(() => {
     editStat("salles",4)
 })

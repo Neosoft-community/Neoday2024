@@ -124,10 +124,9 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('StandConseil').subscribe(closePopup)
 
     WA.room.area.onEnter('indice1').subscribe(() => {
-        editStat("indices",0);
         // const today = new Date();
         // const time = today.getHours() + ":" + today.getMinutes();
-        allPopup.push(WA.ui.openPopup("indice1Popup", "Bonjour ! Voici mon indice : C'est 5 en romain !", [{
+        allPopup.push(WA.ui.openPopup("indice1Popup", "Bonjour ! Voici mon indice : 5 en chiffres Romain !", [{
             label: "OK !",
             className: "primary",
             callback: () => {
@@ -139,8 +138,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice1').subscribe(closePopup)
 
     WA.room.area.onEnter('indice2').subscribe(() => {
-        editStat("indices",1);
-        allPopup.push (WA.ui.openPopup("indice2Popup", "Voici un nouvel indice : C'est la meilleure note possible à l'école !", [{
+        allPopup.push (WA.ui.openPopup("indice2Popup", "Hello ! Voici un nouvel indice : C'est la meilleure note possible à l'école !", [{
             label: "Merci !",
             className: "primary",
             callback: () => {
@@ -152,7 +150,6 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice2').subscribe(closePopup)
 
     WA.room.area.onEnter('indice3').subscribe(() => {
-        editStat("indices",2);
         allPopup.push (WA.ui.openPopup("indice3Popup", "Un nouvel indice, ici tu trouveras : Mon 3eme est à la même place dans l'alphabet !", [{
             label: "Merci !",
             className: "primary",
@@ -165,7 +162,6 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice3').subscribe(closePopup)
 
     WA.room.area.onEnter('indice4').subscribe(() => {
-        editStat("indices",3);
         allPopup.push (WA.ui.openPopup("indice4Popup", "Bonjour, voici mon indice : Je suis l'onomatopée préférée de Denis Brognard !", [{
             label: "OK, merci !",
             className: "primary",
@@ -178,7 +174,6 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice4').subscribe(closePopup)
 
     WA.room.area.onEnter('indice5').subscribe(() => {
-        editStat("indices",4);
         allPopup.push (WA.ui.openPopup("indice5Popup", "Salut ! Allez, voici un petit indice : Je suis la première lettre du nom de notre entreprise !", [{
             label: "Merci !",
             className: "primary",
@@ -191,7 +186,6 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice5').subscribe(closePopup)
 
     WA.room.area.onEnter('indice6').subscribe(() => {
-        editStat("indices",5);
         allPopup.push (WA.ui.openPopup("indice6Popup", "Bonjour ! Voici mon indice : Je suis l'initiale de la troisième valeur chez Néosoft !", [{
             label: "OK, merci !",
             className: "primary",
@@ -204,8 +198,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice6').subscribe(closePopup)
 
     WA.room.area.onEnter('indice7').subscribe(() => {
-        editStat("indices",6);
-        allPopup.push (WA.ui.openPopup("indice7Popup", "Hello ! Indice : Je suis imprimé sur la poitrine d'un super héros très connu !", [{
+        allPopup.push (WA.ui.openPopup("indice7Popup", "Hello ! Voici mon indice : Je suis imprimé sur la poitrine d'un super héros très connu !", [{
             label: "OK, merci !",
             className: "primary",
             callback: () => {
@@ -217,8 +210,7 @@ WA.onInit().then(() => {
     WA.room.area.onLeave('indice7').subscribe(closePopup)
 
     WA.room.area.onEnter('indice8').subscribe(() => {
-        editStat("indices",7);
-        allPopup.push ( WA.ui.openPopup("indice8Popup", "Indice : Je suis la lettre la plus utilisée dans la langue française !", [{
+        allPopup.push ( WA.ui.openPopup("indice8Popup", "Hola ! Voici mon indice : Je suis la lettre la plus utilisée dans la langue française !", [{
             label: "OK, merci !",
             className: "primary",
             callback: () => {
@@ -228,20 +220,6 @@ WA.onInit().then(() => {
     })
 
     WA.room.area.onLeave('indice8').subscribe(closePopup)
-
-    WA.room.area.onEnter('indice9').subscribe(() => {
-        editStat("indices",8);
-        allPopup.push (WA.ui.openPopup("indice9Popup", "Mon tout est le moment que tout le monde attend !", [{
-            label: "Rendez-vous dans l'enquete de satisfaction pour répondre !",
-            className: "primary",
-            callback: () => {
-                closePopup();
-            }
-        }]));
-    })
-
-    WA.room.area.onLeave('indice9').subscribe(closePopup)
-
 
     WA.room.area.onEnter('rs').subscribe(() => {
         allPopup.push(WA.ui.openPopup("rsPopup", "Tu veux nous suivre sur les réseaux sociaux ?", [{

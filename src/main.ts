@@ -92,6 +92,22 @@ WA.onInit().then(() => {
     // Vérifier l'heure toutes les secondes
     setInterval(verifierHeure, 1000);
 
+    //area stand Software engenering
+    WA.room.area.onEnter('StandS').subscribe(() => {
+        // const today = new Date();
+        // const time = today.getHours() + ":" + today.getMinutes();
+        allPopup.push(WA.ui.openPopup("StandS", "Merci de vous rendre en salle 2 !", [{
+            label: "OK !",
+            className: "primary",
+            callback: () => {
+                closePopup();
+            }
+        }]));
+    })
+
+    WA.room.area.onLeave('StandS').subscribe(closePopup)
+
+
     //area stand conseil et agilité message
     WA.room.area.onEnter('StandConseil').subscribe(() => {
         // const today = new Date();

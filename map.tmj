@@ -4284,7 +4284,7 @@
                         {
                          "name":"openWebsiteTriggerMessage",
                          "type":"string",
-                         "value":"Repond aux quizz Neosoft !"
+                         "value":"R\u00e9ponds au Quizz pour tenter de remporter un ch\u00e8que cadeau !"
                         }, 
                         {
                          "name":"silent",

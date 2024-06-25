@@ -559,7 +559,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
         label: "ajouter",
         className: "primary",
         callback: () => {
-            addTextMg("la conférence commenceras sous peu.  ")
+            addTextMg("la conférence commencera sous peu.  ")
             
         }
     }]));
@@ -567,7 +567,7 @@ WA.room.onEnterLayer("mgZoneAdmin").subscribe(() => {
      * les trois popup permettant de supprimer, de vérifier et d'envoyer le message globale
      */
     allPopup.push(WA.ui.openPopup("admin", 'Envoyer', [{
-        label: "envoyé",
+        label: "envoyer",
         className: "primary",
         callback: () => {
             sendMg();

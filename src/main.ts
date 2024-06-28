@@ -122,7 +122,7 @@ WA.onInit().then(() => {
     })
 
     WA.room.area.onLeave('StandConseil').subscribe(closePopup)
-
+//Les différents dialogues pour la quête avec les initiales
     WA.room.area.onEnter('indice1').subscribe(() => {
         // const today = new Date();
         // const time = today.getHours() + ":" + today.getMinutes();
@@ -257,9 +257,11 @@ WA.onInit().then(() => {
 
     WA.room.area.onLeave('fdn').subscribe(closePopup)
 
+    //fonctions pour la chasse au trésor sur la map
     WA.room.area.onEnter('bot1').subscribe(() => {
         editStat("quetesTard",0);
         let test: any;
+        //teste la valeur state.foo d'un utilistateur, et retourne un dialogue différent si on lui a parlé au bon moment
         test = WA.player.state.foo,
         WA.player.state.foo = test;
         if (test == 0)
@@ -297,7 +299,7 @@ WA.onInit().then(() => {
         test = WA.player.state.foo,
         WA.player.state.foo = test;
         
-
+        //si tu lui a parlé trop tôt
         if (test < 1)
             {
                 editStat("quetesTot",1);
@@ -310,7 +312,7 @@ WA.onInit().then(() => {
                 }]));
     
             }
-
+        //si tu lui a parlé au bon moment
         else if (test == 1)
         {
             editStat("quetesTard",1);
@@ -326,7 +328,7 @@ WA.onInit().then(() => {
     
         }
 
-
+        //si tu as parlé trop tard au bot
         else
         {
             editStat("quetesTard",1);
